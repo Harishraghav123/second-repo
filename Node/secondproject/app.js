@@ -8,6 +8,7 @@ app.use(cors());
 
 
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({
     extended: false
 }));
@@ -22,9 +23,7 @@ const { result } = require("underscore");
 
 app.use('/', indexRouter)
 
-/**
- * Server running Port Number
- */
+// Server running Port Number
 app.listen(port, (err) => {
     if (err) {
         throw err
