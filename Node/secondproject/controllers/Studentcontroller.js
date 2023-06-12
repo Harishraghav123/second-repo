@@ -1,4 +1,3 @@
-
 var db = require("./../connection_file").con;
 var validator = require('validator');
 const bcrypt = require('bcrypt');
@@ -158,8 +157,12 @@ class Studentcontroller {
             // Perform the insertion
             const hashedPassword = await bcrypt.hash(password, 10);
 
-            var sql = "INSERT into users value(?,?,?,?,?)";
-            db.query(sql, [1, name, email, hashedPassword, null], (err, results) => {
+            // current timestamp.
+            const currentTimestamp = new Date().getTime();
+
+            const sql = 'INSERT INTO users (name,email,password,created_at) VALUES (?, ?, ?, ?)';
+            const values = [name, email, hashedPassword, currentTimestamp];
+            db.query(sql, values, (err, results) => {
                 if (results) {
                     res.setHeader('Content-Type', 'text/html');
                     res.status(200).json({

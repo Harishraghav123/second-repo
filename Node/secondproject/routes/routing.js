@@ -3,7 +3,6 @@ const Studentcontroller = require('./../controllers/Studentcontroller');
 
 var express = require('express');
 var router = express.Router();
-var validator = require('validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 

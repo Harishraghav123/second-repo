@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
@@ -18,7 +17,6 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     AppComponent,
     CustomcomponentComponent,
     Customcomponent2Component,
-    RegistrationFormComponent,
     LoginFormComponent,
     UserDetailsComponent
   ],

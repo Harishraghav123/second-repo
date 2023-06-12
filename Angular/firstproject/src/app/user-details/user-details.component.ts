@@ -29,7 +29,6 @@ export class UserDetailsComponent implements OnInit {
 
     this.getData(paramValue);
    
-    // console.log('api data: '+apidata)
     throw new Error('Error occur on UserDetailsComponent.');
   }
 

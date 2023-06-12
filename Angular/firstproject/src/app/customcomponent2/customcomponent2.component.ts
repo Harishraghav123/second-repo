@@ -15,11 +15,6 @@ export class Customcomponent2Component {
   constructor(private http: HttpClient,
     private router: Router) { }
 
-  //This is function is used redirect on other page.
-  getData() {
-    this.router.navigate(['/Custom-component-Component']);
-  }
-
   formData: { name: string, email: string, password: string, check: string, file: string } = { name: "", email: "", password: "", check: "", file: "" };
 
   //This is function is used for insert data into database using POST API.
