@@ -1,0 +1,14 @@
+<div *ngIf="showTemplate; else elseBlock">
+  <h1>Welcome!</h1>
+  <h4>You Have Logged In.</h4>
+  {{message}}
+  
+  <div>
+    <button  (click)="logout()" class="btn btn-primary">Logout</button>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+ <h1>Access denied</h1>
+</ng-template>
+
