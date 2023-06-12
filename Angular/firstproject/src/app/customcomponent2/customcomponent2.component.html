@@ -1,0 +1,53 @@
+<form class="form-control" style="width: 22%; position: relative; left: 40%; top: 50px;" #usersForm="ngForm"
+  (ngSubmit)="getuserformdata(usersForm.value); usersForm.reset();">
+
+<div class="text-center">
+  <h4>Registration</h4>
+  
+</div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Name</label>
+    <input type="text" [(ngModel)]="formData.name" #name="ngModel" name="name" required minlength="3" maxlength="10" class="form-control" id="formGroupExampleInput" placeholder="Enter Name">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.['required']" class="text-danger">Name is required.</div>
+      <div *ngIf="name.errors?.['minlength']" class="text-danger">Name should have at least 3 characters.</div>
+      <div *ngIf="name.errors?.['maxlength']" class="text-danger">Name should have at most 10 characters.</div>
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" [(ngModel)]="formData.email" #email="ngModel" required minlength="3" name="email" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors?.['required']" class="text-danger">email is required.</div>
+      <div *ngIf="email.errors?.['minlength']" class="text-danger">email should have at least 3 characters.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" [(ngModel)]="formData.password" name="password" class="form-control"
+      id="exampleInputPassword1" placeholder="Enter Password">
+  </div>
+  <button type="submit" class="btn btn-primary" style="position: relative; left: 32%;top: 5px;">Register</button><br>
+  <!-- <button type="submit" class="btn btn-primary" style="position: relative; left: 35%; top: 5px;">Login</button> -->
+  <a href="login-form" style="position: relative; left: 40%; top: 5px;">Login</a>
+</form>
+
+
+<div class="text-center" style="position: relative; left: 0.3%; top: 60px;">
+  <button (click)="getData()" class="btn btn-primary">Show data</button>
+</div>
+<br><br><br>
+<div class="text-center text-success" id="msg-div" style="position: relative; top: -410px;">
+  <h6>{{message}}</h6>
+</div>
+
+
+
+
+
+
+
